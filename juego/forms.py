@@ -10,13 +10,16 @@ def verificar(numero):
     return True
 
 class IngreseNumero(forms.Form):
-	numero = forms.CharField(label="ingrese numero", max_length = 4)
+    numero = forms.CharField(label="ingrese numero", max_length = 4)
 
-	def clean_numero(self):
-		numero = self.cleaned_data['numero']
-		if not verificar(numero) :
-			raise forms.ValidationError("no cumple con los requisitos!")
-		return numero
+    def clean_numero(self):
+        numero = self.cleaned_data['numero']
+        if not verificar(numero) :
+            raise forms.ValidationError("no cumple con los requisitos!")
+        return numero
 
 class Registrar(forms.Form):
     nombre = forms.CharField(label="ingrese nombre", max_length = 15)
+
+class Elegir(forms.Form):
+    privado = forms.BooleanField(label="privado")
