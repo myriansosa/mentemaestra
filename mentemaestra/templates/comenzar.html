@@ -6,6 +6,13 @@
 <br>
 <br>
 
+
+<form action="" method="post">
+<h3>Turno de {{ partida.turno_de.nombre }}</h3>
+{% csrf_token %}
+{{ form }}
+<br><input type="submit" value="enviar">
+
 <table class="table table-stripped">
 <TR>
 <TH>ronda</TH>
@@ -20,11 +27,7 @@
 </TABLE>
 
 
-<form action="" method="post">
-<h3>Turno de {{ partida.turno_de.nombre }}</h3>
-{% csrf_token %}
-{{ form }}
-<br><input type="submit" value="enviar">
+
 </input>
 
 {% endblock %}

@@ -8,7 +8,7 @@ import random, string
 
 
 def jugar(request, partida_id):
-    jugadas = Jugada.objects.filter(partida__id=partida_id)
+    jugadas = Jugada.objects.filter(partida__id=partida_id).order_by('-id')
     partida = Partida.objects.get(id=partida_id)
             
     if request.method == 'POST':
